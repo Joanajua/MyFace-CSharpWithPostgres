@@ -23,7 +23,7 @@ namespace MyFace.DataAccess
             using (var db = ConnectionHelper.CreateSqlConnection())
             {
                 //TODO Fetch user list from user table instead of from posts and senders.
-                return db.Query<string>("(SELECT DISTINCT recipient FROM posts) UNION (SELECT DISTINCT sender FROM posts)");
+                return db.Query<string>("SELECT * FROM users");
             }
         }
     }
